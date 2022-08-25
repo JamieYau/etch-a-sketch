@@ -5,17 +5,21 @@ let gridDim = document.getElementById("grid").clientWidth;
 const sliderValue = document.querySelectorAll("span");
 const inputSlider = document.querySelector("input");
 
+function resetGrid() {
+  const gridElements = document.querySelectorAll(".grid-element");
+  gridElements.forEach((gridElement) => {
+    gridElement.remove();
+  });
+}
+
 //Adjust slider value text
 inputSlider.oninput = () => {
-  //update dimensions
-  let val = inputSlider.value;
-  sliderValue[0].textContent = val;
-  sliderValue[1].textContent = val;
-  //reset grid color
-  const gridElements = Array.from(document.querySelectorAll(".grid-element"));
-  gridElements.forEach(
-    (gridElement) => (gridElement.style.background = "white")
-  );
+  gridSize = inputSlider.value;
+  sliderValue[0].textContent = gridSize;
+  sliderValue[1].textContent = gridSize;
+  //reset grid
+  resetGrid();
+  generateGrid();
 };
 
 function generateRandomColor() {
