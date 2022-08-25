@@ -9,11 +9,23 @@ function generateRandomColor() {
   return `#${randColor.toUpperCase()}`;
 }
 
-for (let i = 0; i < 256; i++) {
-  const gridElement = document.createElement("div");
-  gridElement.style.background = generateRandomColor();
-  gridElement.style.width = "25px";
-  gridElement.style.height = "25px";
-  gridElement.classList.add("grid-element");
-  grid.appendChild(gridElement);
+function generateGrid() {
+  for (let i = 0; i < 256; i++) {
+    const gridElement = document.createElement("div");
+    gridElement.style.width = "25px";
+    gridElement.style.height = "25px";
+    gridElement.classList.add("grid-element");
+    grid.appendChild(gridElement);
+  }
 }
+
+function addGlobalEventListener(type, selector, callback) {
+  document.addEventListener(type, (e) => {
+    if (e.target.matches(selector)) callback(e);
+  });
+}
+
+generateGrid();
+addGlobalEventListener("mouseover", ".grid-element", (e) => {
+  e.target.style.background = generateRandomColor();
+});
