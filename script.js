@@ -7,9 +7,15 @@ const inputSlider = document.querySelector("input");
 
 //Adjust slider value text
 inputSlider.oninput = () => {
+  //update dimensions
   let val = inputSlider.value;
   sliderValue[0].textContent = val;
   sliderValue[1].textContent = val;
+  //reset grid color
+  const gridElements = Array.from(document.querySelectorAll(".grid-element"));
+  gridElements.forEach(
+    (gridElement) => (gridElement.style.background = "white")
+  );
 };
 
 function generateRandomColor() {
