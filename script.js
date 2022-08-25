@@ -1,4 +1,16 @@
+let gridSize = 16;
 const grid = document.querySelector("#grid");
+let gridDim = document.getElementById("grid").clientWidth;
+
+const sliderValue = document.querySelectorAll("span");
+const inputSlider = document.querySelector("input");
+
+//Adjust slider value text
+inputSlider.oninput = () => {
+  let val = inputSlider.value;
+  sliderValue[0].textContent = val;
+  sliderValue[1].textContent = val;
+};
 
 function generateRandomColor() {
   let maxVal = 0xffffff; // 16777215
@@ -10,10 +22,10 @@ function generateRandomColor() {
 }
 
 function generateGrid() {
-  for (let i = 0; i < 256; i++) {
+  for (let i = 0; i < gridSize ** 2; i++) {
     const gridElement = document.createElement("div");
-    gridElement.style.width = "25px";
-    gridElement.style.height = "25px";
+    gridElement.style.width = gridDim / gridSize + "px";
+    gridElement.style.height = gridDim / gridSize + "px";
     gridElement.classList.add("grid-element");
     grid.appendChild(gridElement);
   }

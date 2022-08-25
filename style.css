@@ -13,11 +13,20 @@ header {
   font-weight: bold;
 }
 
+.settings {
+    background-color: bisque;
+    text-align: center;
+}
+
+h3, h4 {
+    margin: 5px 0;
+}
+
 .grid {
     border:3px solid black;
     border-radius: 5px;
-    width: 400px;
-    height: 400px;
+    width: 600px;
+    height: 600px;
     display: flex;
     flex-wrap: wrap;
 }
@@ -25,4 +34,5 @@ header {
 .container {
     display: flex;
     justify-content: center;
+    gap: 100px;
 }
