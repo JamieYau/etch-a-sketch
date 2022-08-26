@@ -60,3 +60,5 @@ function changeColor(choice) {
 
 generateGrid();
 changeSize();
+const colorPicker = document.getElementById('colorPicker');
+colorPicker.oninput = (e) => changeColor(e.target.value);
