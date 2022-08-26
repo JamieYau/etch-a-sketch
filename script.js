@@ -1,5 +1,5 @@
 let gridSize = 16;
-let color = "black";
+let color = "#ffb721";
 
 function resetGrid() {
   const gridElements = document.querySelectorAll(".grid-element");
@@ -57,8 +57,9 @@ function changeColor(choice) {
 }
 
 //////////////////////////////////////////////////code//////////////////////////////////////////////
-
 generateGrid();
 changeSize();
-const colorPicker = document.getElementById('colorPicker');
+
+const colorPicker = document.getElementById("color-picker");
 colorPicker.oninput = (e) => changeColor(e.target.value);
+
