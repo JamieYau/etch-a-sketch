@@ -26,7 +26,7 @@ function generateGrid() {
 
 function changeSize() {
   const sliderValue = document.querySelectorAll("span");
-  const inputSlider = document.querySelector("input");
+  const inputSlider = document.querySelector("input[type=range]");
   //Adjust slider value text
   inputSlider.oninput = () => {
     gridSize = inputSlider.value;
