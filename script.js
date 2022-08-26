@@ -46,11 +46,13 @@ function generateRandomColor() {
   return `#${randColor.toUpperCase()}`;
 }
 
-function colorSquare (){
-  this.style.background = color;
+function colorSquare() {
+  if (color === "random") {
+    this.style.backgroundColor = generateRandomColor();
+  } else this.style.background = color;
 }
 
-function changeColor (choice) {
+function changeColor(choice) {
   color = choice;
 }
 
@@ -58,4 +60,3 @@ function changeColor (choice) {
 
 generateGrid();
 changeSize();
-
