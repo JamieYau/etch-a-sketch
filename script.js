@@ -1,5 +1,5 @@
 let gridSize = 16;
-let color = "black";
+let color = "#ffb721";
 
 function resetGrid() {
   const gridElements = document.querySelectorAll(".grid-element");
@@ -26,7 +26,7 @@ function generateGrid() {
 
 function changeSize() {
   const sliderValue = document.querySelectorAll("span");
-  const inputSlider = document.querySelector("input");
+  const inputSlider = document.querySelector("input[type=range]");
   //Adjust slider value text
   inputSlider.oninput = () => {
     gridSize = inputSlider.value;
@@ -57,6 +57,9 @@ function changeColor(choice) {
 }
 
 //////////////////////////////////////////////////code//////////////////////////////////////////////
-
 generateGrid();
 changeSize();
+
+const colorPicker = document.getElementById("color-picker");
+colorPicker.oninput = (e) => changeColor(e.target.value);
+

@@ -12,10 +12,10 @@
     <div class="container">
         <div class="settings">
             <h2>Settings</h2>
-            <button id="black" onclick="changeColor('black')">Black</button>
+            <input id="color-picker" type="color" value="#ffb721">
             <button id="rainbow" onclick="changeColor('random')">Rainbow</button>
             <button id="eraser" onclick="changeColor('white')">Eraser</button>
-            <button id="black" onclick="generateGrid()">Clear</button>
+            <button id="clear" onclick="generateGrid()">Clear</button>
             <input type="range" min="16" max="100" step="1" value="1">
             <p class="grid-size"><span class="range-value">16</span> x <span class="range-value">16</span></p>
         </div>
